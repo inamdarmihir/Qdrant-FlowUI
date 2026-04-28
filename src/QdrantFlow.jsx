@@ -44,6 +44,7 @@ export default function QdrantFlow() {
   const nodesRef     = useRef(nodes);
   const panRef       = useRef(pan);
   const scaleRef     = useRef(scale);
+  const edgesRef     = useRef(edges);
   const draggingRef  = useRef(null);
   const dragOffset   = useRef({ x: 0, y: 0 });
   const connectRef   = useRef(null);
@@ -53,6 +54,7 @@ export default function QdrantFlow() {
   const canvasSizeRef = useRef({ w: 800, h: 600 });
 
   useEffect(() => { nodesRef.current = nodes; }, [nodes]);
+  useEffect(() => { edgesRef.current = edges; }, [edges]);
   useEffect(() => { panRef.current = pan; }, [pan]);
   useEffect(() => { scaleRef.current = scale; }, [scale]);
 
@@ -75,7 +77,7 @@ export default function QdrantFlow() {
   }, []);
 
   const selectedNode = nodes.find((n) => n.id === selectedId) ?? null;
-  const code = useMemo(() => generateCode(nodes), [nodes]);
+  const code = useMemo(() => generateCode(nodes, edges), [nodes, edges]);
 
   // ── Drag node ──
   const handleNodeDragStart = useCallback((e, nodeId) => {
@@ -206,11 +208,11 @@ export default function QdrantFlow() {
     const fields = {};
     def.fields.forEach((f) => { fields[f.key] = overrides[f.key] ?? f.default; });
     const node = { id: uid(), type, x, y, fields };
-    setNodes((prev) => { const next = [...prev, node]; pushHistory(prev, edges); return next; });
+    setNodes((prev) => { const next = [...prev, node]; pushHistory(prev, edgesRef.current); return next; });
   };
 
   const deleteNode = (id) => {
-    setNodes((prev) => { const next = prev.filter((n) => n.id !== id); pushHistory(prev, edges); return next; });
+    setNodes((prev) => { const next = prev.filter((n) => n.id !== id); pushHistory(prev, edgesRef.current); return next; });
     setEdges((prev) => prev.filter((e) => e.from !== id && e.to !== id));
     if (selectedId === id) setSelectedId(null);
   };

@@ -154,3 +154,39 @@ export const NODE_DEFS = {
 };
 
 export const PALETTE_GROUPS = ["Qdrant", "Embeddings", "LLM", "Data", "Agent"];
+
+// ─── PLUGIN API ───────────────────────────────────────────────────────────────
+/**
+ * Register a custom node type so it appears in the palette and can be used on
+ * the canvas. Call this before the React app mounts (e.g. in main.jsx).
+ *
+ * @param {string} type   - Unique snake_case identifier, e.g. "my_llm"
+ * @param {object} def    - Node definition (see NODE_DEFS entries for shape)
+ * @param {string} def.label     - Display name shown in the palette / node header
+ * @param {string} def.group     - Palette group (creates a new group if not present)
+ * @param {string} def.icon      - Short abbreviation shown in the node badge (≤ 3 chars)
+ * @param {string} def.color     - Primary accent colour (CSS value)
+ * @param {string} def.colorBg   - Badge / header background colour (CSS value)
+ * @param {Array}  def.fields    - [{key, label, default}] editable fields
+ * @param {Array}  def.ports_in  - Input port names
+ * @param {Array}  def.ports_out - Output port names
+ */
+export function registerNode(type, def) {
+  if (NODE_DEFS[type]) {
+    console.warn(`[QdrantFlow] Node type "${type}" is already registered — overwriting.`);
+  }
+  NODE_DEFS[type] = def;
+  if (!PALETTE_GROUPS.includes(def.group)) {
+    PALETTE_GROUPS.push(def.group);
+  }
+}
+
+/**
+ * Ensure a palette group exists without registering a full node.
+ * Useful when you register several nodes in the same group one-by-one.
+ */
+export function registerGroup(groupName) {
+  if (!PALETTE_GROUPS.includes(groupName)) {
+    PALETTE_GROUPS.push(groupName);
+  }
+}
