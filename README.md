@@ -274,11 +274,27 @@ mouse stays fixed — achieved by adjusting pan on each wheel event.
 
 ```
 Qdrant-FlowUI/
-├── QdrantFlow.jsx      # Entire application — all components in one file
 ├── src/
-│   └── main.jsx        # React entry point
-├── index.html          # Vite HTML shell
-├── vite.config.js      # Vite configuration
+│   ├── components/         # Reusable UI components
+│   │   ├── CodePanel.jsx
+│   │   ├── EdgeLayer.jsx
+│   │   ├── FlowNode.jsx
+│   │   ├── Minimap.jsx
+│   │   ├── PaletteItem.jsx
+│   │   ├── Port.jsx
+│   │   ├── PropsPanel.jsx
+│   │   ├── QdrantLogo.jsx
+│   │   ├── SaveLoadModal.jsx
+│   │   └── SettingsModal.jsx
+│   ├── constants/          # Application constants
+│   │   ├── nodes.js
+│   │   └── theme.js
+│   ├── utils/              # Utility functions
+│   │   └── codeGenerator.js
+│   ├── QdrantFlow.jsx      # Main application component
+│   └── main.jsx            # React entry point
+├── index.html              # Vite HTML shell
+├── vite.config.js          # Vite configuration
 ├── package.json
 └── .gitignore
 ```
