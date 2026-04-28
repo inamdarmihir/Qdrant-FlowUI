@@ -1,5 +1,32 @@
 import { NODE_DEFS } from "../constants/nodes";
 
+// ─── PLUGIN CODE-GENERATOR REGISTRY ──────────────────────────────────────────
+const _customImports    = {}; // nodeType → import line string
+const _customGenerators = {}; // nodeType → (lines: string[], fields: object, node: object) => void
+
+/**
+ * Register a Python import line that will be emitted whenever nodes of
+ * `nodeType` appear in the graph.
+ *
+ * @param {string} nodeType   - The node type key, e.g. "my_llm"
+ * @param {string} importLine - The Python import statement, e.g. "import requests"
+ */
+export function registerImport(nodeType, importLine) {
+  _customImports[nodeType] = importLine;
+}
+
+/**
+ * Register a code-generation function for a custom node type.
+ * The function receives the shared `lines` array (push to it), the node's
+ * `fields` object, and the full `node` object.
+ *
+ * @param {string}   nodeType    - The node type key, e.g. "my_llm"
+ * @param {Function} generatorFn - (lines: string[], fields: object, node: object) => void
+ */
+export function registerCodeGenerator(nodeType, generatorFn) {
+  _customGenerators[nodeType] = generatorFn;
+}
+
 export function generateCode(nodes) {
   if (!nodes.length) return "# Add nodes to generate code";
   const has = (t) => nodes.some((n) => n.type === t);
@@ -11,10 +38,28 @@ export function generateCode(nodes) {
   if (has("anthropic_llm")) lines.push("from anthropic import Anthropic");
   if (has("fastembed")) lines.push("from fastembed import TextEmbedding");
   if (has("reranker")) lines.push("import cohere");
+
+  // Emit imports registered by plugins
+  const seenImports = new Set();
+  nodes.forEach((n) => {
+    if (_customImports[n.type] && !seenImports.has(n.type)) {
+      lines.push(_customImports[n.type]);
+      seenImports.add(n.type);
+    }
+  });
+
   lines.push("");
 
   nodes.forEach((n) => {
     const f = n.fields;
+
+    // Delegate to a plugin-registered generator first
+    if (_customGenerators[n.type]) {
+      _customGenerators[n.type](lines, f, n);
+      lines.push("");
+      return;
+    }
+
     switch (n.type) {
       case "qdrant_collection":
         lines.push(`# Qdrant client — ${f.collection}`);
