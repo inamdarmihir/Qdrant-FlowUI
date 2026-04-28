@@ -1,19 +1,27 @@
-<div align="center">
+# QdrantFlow
 
-# 🔷 QdrantFlow
+A visual, AI-assisted pipeline builder for [Qdrant](https://qdrant.tech). This repository provides a drag-and-drop interface for composing AI pipelines and generating production-ready Python code.
 
-**A visual, AI-assisted pipeline builder for [Qdrant](https://qdrant.tech) — drag, connect, generate, and export production-ready Python code.**
+## System Requirements
 
+<<<<<<< Updated upstream
+- Node.js version 18 or higher.
+- A modern web browser.
+- (Optional) Anthropic API key for AI generation features.
+=======
 [![React](https://img.shields.io/badge/React-18.3.1-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-5.4.21-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Vite](https://img.shields.io/badge/Vite-5.4.0-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES2022-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Qdrant](https://img.shields.io/badge/Qdrant-Vector%20DB-DC244C?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDIgN2wxMCA1IDEwLTV6TTIgMTdsOSA1IDktNXYtNWwtOSA1LTktNXoiLz48L3N2Zz4=&logoColor=white)](https://qdrant.tech/)
-[![Anthropic](https://img.shields.io/badge/Claude-Sonnet_4-D97757?style=flat-square&logo=anthropic&logoColor=white)](https://www.anthropic.com/)
+[![Anthropic](https://img.shields.io/badge/Powered%20by-Claude-D97757?style=flat-square&logo=anthropic&logoColor=white)](https://www.anthropic.com/)
 [![License](https://img.shields.io/badge/License-MIT-6366f1?style=flat-square)](LICENSE)
+>>>>>>> Stashed changes
 
-<br/>
+## Installation
 
+<<<<<<< Updated upstream
+To set up the project locally, run the following commands:
+=======
 *Build RAG pipelines, semantic search, and agentic systems — visually.*
 
 <br/>
@@ -24,37 +32,22 @@
 
 ---
 
-## 📋 Table of Contents
-
-- [Overview](#-overview)
-- [Getting Started](#-getting-started)
-- [Usage](#-usage)
-- [Example Pipelines](#-example-pipelines)
-- [Node Reference](#-node-reference)
-- [🔌 Plugin / Custom Nodes](#-plugin--custom-nodes)
-- [Architecture](#-architecture)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-
----
-
-## 🌟 Overview
+## Overview
 
 QdrantFlow is a node-based flow editor for composing AI pipelines centered around the Qdrant vector database. No boilerplate — just drag, connect, and export.
 
 | Capability | Description |
 |---|---|
-| 🖱️ **Drag & drop** | Add nodes from the palette onto the canvas |
-| 🔗 **Visual wiring** | Connect ports between nodes to express data flow |
-| ✏️ **Inline editing** | Edit fields directly on each node or in the Properties panel |
-| 🤖 **AI generation** | Describe a pipeline in plain English and let Claude build it |
-| 🐍 **Code export** | Export production-ready Python from any graph in one click |
-| 💾 **Save / load** | Persist named pipelines to `localStorage` or as JSON files |
-| 🔌 **Plugin API** | Register custom node types without touching core source files |
+| **Drag & drop** | Add nodes from the palette onto the canvas |
+| **Visual wiring** | Connect ports between nodes to express data flow |
+| **Inline editing** | Edit fields directly on each node or in the Properties panel |
+| **AI generation** | Describe a pipeline in plain English and let Claude build it |
+| **Code export** | Export production-ready Python from any graph in one click |
+| **Save / load** | Persist named pipelines to `localStorage` or as JSON files |
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -62,6 +55,7 @@ QdrantFlow is a node-based flow editor for composing AI pipelines centered aroun
 [![Anthropic](https://img.shields.io/badge/Anthropic_API_Key-For%20AI%20generation-D97757?style=flat-square)](https://console.anthropic.com/)
 
 ### Run locally
+>>>>>>> Stashed changes
 
 ```bash
 git clone https://github.com/inamdarmihir/Qdrant-FlowUI.git
@@ -70,13 +64,10 @@ npm install
 npm run dev
 ```
 
+<<<<<<< Updated upstream
+The application will be available at `http://localhost:5173`.
+=======
 Opens at **http://localhost:5173**
-
-### Build for production
-
-```bash
-npm run build   # outputs to dist/
-```
 
 ### Set your API key
 
@@ -84,7 +75,7 @@ Click **⚙ Settings** in the top-right and paste your Anthropic API key. It is 
 
 ---
 
-## 📖 Usage
+## Usage
 
 ### Building a pipeline manually
 
@@ -92,7 +83,7 @@ Click **⚙ Settings** in the top-right and paste your Anthropic API key. It is 
 2. **Click a field value** directly on the node (or use the Properties panel) to edit it
 3. **Connect ports** — click and drag from an output port (right side) to an input port (left side) of another node
 4. **View generated Python** in the Code panel on the right
-5. **Download** as `qdrant_pipeline.py` with the ↓ button
+5. **Download** as `qdrant_pipeline.py`
 
 ### AI generation
 
@@ -106,7 +97,7 @@ Document ingestion with OpenAI embeddings into Qdrant
 
 The canvas is populated automatically and fit to view.
 
-### ⌨️ Keyboard shortcuts
+### Keyboard shortcuts
 
 | Key | Action |
 |---|---|
@@ -122,7 +113,7 @@ The canvas is populated automatically and fit to view.
 
 ---
 
-## 🗺️ Example Pipelines
+## Example Pipelines
 
 ### Basic RAG
 ```
@@ -149,7 +140,7 @@ Query Input → Agent Loop → Tool Caller → (result back to Agent Loop)
 
 ---
 
-## 📦 Node Reference
+## Node Reference
 
 ### Qdrant
 
@@ -195,152 +186,36 @@ Query Input → Agent Loop → Tool Caller → (result back to Agent Loop)
 | **Output** | `response` | — | format |
 
 ---
+>>>>>>> Stashed changes
 
-## 🔌 Plugin / Custom Nodes
+## Architecture
 
-You can add entirely new node types — with their own palette entry, field definitions, and Python code generation — **without modifying any core file**.
+QdrantFlow is a single-page React application leveraging Vite for module bundling.
 
-### Quick-start (3 steps)
+- **UI Framework:** React 18
+- **Bundler:** Vite 5
+- **Styling:** Inline CSS
+- **Persistence:** Local Storage
+- **Code Generation:** AST-based code generation using an explicit topological sort of flow nodes.
 
-**1 — Create your plugin file** (e.g. `src/plugins/my-llm.js`):
+## Usage
 
-```js
-import { T } from "../constants/theme";
-import { registerNode } from "../constants/nodes";
-import { registerImport, registerCodeGenerator } from "../utils/codeGenerator";
+### Building Pipelines
 
-// Step 1 — declare the node shape
-registerNode("my_llm", {
-  label:   "My LLM",
-  group:   "Custom",           // creates a new palette group if it doesn't exist
-  icon:    "ML",
-  color:   T.purple,
-  colorBg: "rgba(168,85,247,0.12)",
-  fields: [
-    { key: "endpoint", label: "Endpoint", default: "https://api.example.com/v1" },
-    { key: "model",    label: "Model",    default: "my-model-v1"                },
-  ],
-  ports_in:  ["context", "query"],
-  ports_out: ["response"],
-});
+1. Drag node components from the left palette onto the main canvas.
+2. Edit inline properties by clicking directly on node fields.
+3. Connect output ports to compatible input ports to establish data flow.
+4. Export the resulting directed acyclic graph as a Python script.
 
-// Step 2 — register the Python import
-registerImport("my_llm", "import requests");
+### Generating Pipelines via AI
 
-// Step 3 — register the Python code generator
-registerCodeGenerator("my_llm", (lines, fields) => {
-  lines.push(`# My LLM — ${fields.model}`);
-  lines.push(`response = requests.post("${fields.endpoint}/chat", json={"model": "${fields.model}"})`);
-  lines.push(`answer = response.json()["choices"][0]["message"]["content"]`);
-});
-```
+Users can provide a plain text description in the prompt bar to automatically generate a visual pipeline graph via the Anthropic Claude API.
 
-**2 — Import it in `src/main.jsx`** before the app renders:
+## License
 
-```js
-// src/main.jsx
-import "./plugins/my-llm";          // ← add this line
-import React from "react";
-import ReactDOM from "react-dom/client";
-import QdrantFlow from "./QdrantFlow.jsx";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <QdrantFlow />
-  </React.StrictMode>
-);
-```
-
-**3 — Done!** Your node appears in the palette under the "Custom" group.
-
-### Plugin API reference
-
-| Export | Module | Description |
-|---|---|---|
-| `registerNode(type, def)` | `src/plugins` | Add a node type to the canvas and palette |
-| `registerGroup(name)` | `src/plugins` | Pre-create a palette group |
-| `registerImport(type, line)` | `src/plugins` | Emit a Python import for this node type |
-| `registerCodeGenerator(type, fn)` | `src/plugins` | Generate Python code for this node type |
-
-All four exports are also available individually from `src/constants/nodes` and `src/utils/codeGenerator`.
-
-A fully worked example is at **[`src/plugins/example-custom-node.js`](src/plugins/example-custom-node.js)**.
-
----
-
-## 🏗️ Architecture
-
-### Component Tree
-
-```
-QdrantFlow (root)
-├── Header
-│   ├── QdrantLogo          — SVG isometric cube mark
-│   └── Toolbar             — zoom, undo, save/load, settings
-├── Palette
-│   ├── Search input
-│   └── PaletteItem[]       — draggable node entries grouped by category
-├── Canvas
-│   ├── Grid overlay        — CSS background dot/line grid, scales with zoom
-│   ├── Transformed layer   — pan + scale via CSS transform
-│   │   └── FlowNode[]      — absolutely positioned, draggable nodes
-│   ├── EdgeLayer (SVG)     — bezier curves drawn over node layer in screen space
-│   ├── Minimap             — SVG thumbnail of all nodes + viewport rect
-│   └── PromptBar           — AI generation textarea + send button
-├── RightPanel
-│   ├── PropsPanel          — editable fields for the selected node
-│   └── CodePanel           — syntax-highlighted Python + copy/download
-├── StatusBar
-├── SettingsModal           — Anthropic API key (persisted to localStorage)
-└── SaveLoadModal           — named save slots, JSON import/export
-```
-
-### State Model
-
-| State | Type | Description |
-|---|---|---|
-| `nodes` | `Node[]` | All nodes on canvas (id, type, x, y, fields) |
-| `edges` | `Edge[]` | Connections between node ports (from/to node + port) |
-| `selectedId` | `string` | Currently selected node id |
-| `pan` | `{x, y}` | Canvas translation in pixels |
-| `scale` | `number` | Canvas zoom factor (0.25 – 2.5) |
-| `history` | `Snapshot[]` | Undo stack (up to 30 states of nodes + edges) |
-| `apiKey` | `string` | Anthropic API key (localStorage) |
-
-### Data Flow
-
-```
-User types prompt
-      │
-      ▼
-Claude API (claude-sonnet-4-6)
-      │  returns JSON {nodes[], edges[]}
-      ▼
-setNodes / setEdges
-      │
-      ▼
-FlowNode renders (positioned via node.x, node.y)
-      │
-      ▼
-EdgeLayer polls port DOM positions every 60 ms
-      │  getPortCenter() → getBoundingClientRect() − canvas origin
-      ▼
-SVG bezier curves drawn in screen space over canvas
-      │
-      ▼
-generateCode(nodes) → Python string (memo)
-      │
-      ▼
-CodePanel renders syntax-highlighted output
-```
-
-### Canvas Coordinate System
-
-```
-Screen space:  raw pixel position in the browser viewport
-Canvas space:  screen position relative to the canvas element's top-left
-Node space:    logical position stored in node.x / node.y
-
+<<<<<<< Updated upstream
+This project is licensed under the MIT License.
+=======
 Conversion:
   node_space → canvas_space:   canvas_pos = node.x * scale + pan.x
   canvas_space → node_space:   node_pos   = (canvas_pos − pan) / scale
@@ -351,27 +226,25 @@ mouse stays fixed — achieved by adjusting pan on each wheel event.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-| Layer | Technology | Version |
-|---|---|---|
-| UI framework | [React](https://react.dev/) | 18.3.1 |
-| DOM renderer | [React DOM](https://react.dev/) | 18.3.1 |
-| Bundler | [Vite](https://vitejs.dev/) | 5.4.21 |
-| Vite React plugin | [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react) | 4.7.0 |
-| Styling | Inline styles (zero CSS dependencies) | — |
-| AI generation | [Anthropic API](https://www.anthropic.com/) — `claude-sonnet-4-6` | — |
-| Persistence | Browser `localStorage` | — |
-| Language | JSX / ES2022 | — |
+| Layer | Technology |
+|---|---|
+| UI framework | React 18 |
+| Bundler | Vite 5 |
+| Styling | Inline styles (zero CSS dependencies) |
+| AI generation | Anthropic API — `claude-sonnet-4-6` |
+| Persistence | Browser `localStorage` |
+| Language | JSX (single component file) |
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Qdrant-FlowUI/
 ├── src/
-│   ├── components/              # Reusable UI components
+│   ├── components/         # Reusable UI components
 │   │   ├── CodePanel.jsx
 │   │   ├── EdgeLayer.jsx
 │   │   ├── FlowNode.jsx
@@ -382,18 +255,15 @@ Qdrant-FlowUI/
 │   │   ├── QdrantLogo.jsx
 │   │   ├── SaveLoadModal.jsx
 │   │   └── SettingsModal.jsx
-│   ├── constants/               # Application constants
-│   │   ├── nodes.js             # NODE_DEFS + registerNode() plugin API
-│   │   └── theme.js             # Design tokens (colors, etc.)
-│   ├── plugins/                 # Plugin / extension entry-points
-│   │   ├── index.js             # Public plugin API (re-exports)
-│   │   └── example-custom-node.js  # Worked example — copy to create your own
-│   ├── utils/                   # Utility functions
-│   │   └── codeGenerator.js     # Python code gen + registerCodeGenerator() API
-│   ├── QdrantFlow.jsx           # Main application component
-│   └── main.jsx                 # React entry point (import plugins here)
-├── index.html                   # Vite HTML shell
-├── vite.config.js               # Vite configuration
+│   ├── constants/          # Application constants
+│   │   ├── nodes.js
+│   │   └── theme.js
+│   ├── utils/              # Utility functions
+│   │   └── codeGenerator.js
+│   ├── QdrantFlow.jsx      # Main application component
+│   └── main.jsx            # React entry point
+├── index.html              # Vite HTML shell
+├── vite.config.js          # Vite configuration
 ├── package.json
 └── .gitignore
 ```
@@ -405,3 +275,4 @@ Qdrant-FlowUI/
 Built with ❤️ using [Qdrant](https://qdrant.tech/) · [Anthropic Claude](https://www.anthropic.com/) · [React](https://react.dev/) · [Vite](https://vitejs.dev/)
 
 </div>
+>>>>>>> Stashed changes
