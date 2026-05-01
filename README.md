@@ -18,7 +18,6 @@
 
 *Build RAG pipelines, semantic search, and agentic systems — visually.*
 
-![QdrantFlow UI](https://raw.githubusercontent.com/inamdarmihir/Qdrant-FlowUI/main/preview.png)
 
 </div>
 
