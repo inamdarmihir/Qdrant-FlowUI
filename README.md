@@ -14,11 +14,9 @@
 [![Claude](https://img.shields.io/badge/Claude-Sonnet%204-D97757?style=flat-square&logo=anthropic&logoColor=white)](https://www.anthropic.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-6366f1?style=flat-square)](LICENSE)
 
-<br/>
+</div>
 
 *Build RAG pipelines, semantic search, and agentic systems — visually.*
-
-<br/>
 
 ![QdrantFlow UI](https://raw.githubusercontent.com/inamdarmihir/Qdrant-FlowUI/main/preview.png)
 
