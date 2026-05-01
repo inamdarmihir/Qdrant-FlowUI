@@ -1,6 +1,8 @@
 <div align="center">
 
-# 🔷 QdrantFlow
+<img src="https://qdrant.tech/favicon/apple-touch-icon.png" width="60" alt="Qdrant" />
+
+# QdrantFlow
 
 **A visual, AI-assisted pipeline builder for [Qdrant](https://qdrant.tech) — drag, connect, generate, and export production-ready Python code.**
 
@@ -8,9 +10,9 @@
 [![Vite](https://img.shields.io/badge/Vite-5.4.21-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES2022-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Qdrant](https://img.shields.io/badge/Qdrant-Vector%20DB-DC244C?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDIgN2wxMCA1IDEwLTV6TTIgMTdsOSA1IDktNXYtNWwtOSA1LTktNXoiLz48L3N2Zz4=&logoColor=white)](https://qdrant.tech/)
-[![Anthropic](https://img.shields.io/badge/Claude-Sonnet_4-D97757?style=flat-square&logo=anthropic&logoColor=white)](https://www.anthropic.com/)
-[![License](https://img.shields.io/badge/License-MIT-6366f1?style=flat-square)](LICENSE)
+[![Powered by Qdrant](https://img.shields.io/badge/Powered%20by-Qdrant-DC244C?style=flat-square&logo=qdrant&logoColor=white)](https://qdrant.tech/)
+[![Claude](https://img.shields.io/badge/Claude-Sonnet%204-D97757?style=flat-square&logo=anthropic&logoColor=white)](https://www.anthropic.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-6366f1?style=flat-square)](LICENSE)
 
 <br/>
 
@@ -24,42 +26,42 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [Overview](#-overview)
-- [Getting Started](#-getting-started)
-- [Usage](#-usage)
-- [Example Pipelines](#-example-pipelines)
-- [Node Reference](#-node-reference)
-- [🔌 Plugin / Custom Nodes](#-plugin--custom-nodes)
-- [Architecture](#-architecture)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Example Pipelines](#example-pipelines)
+- [Node Reference](#node-reference)
+- [Plugin API](#plugin-api)
+- [Architecture](#architecture)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
 
 ---
 
-## 🌟 Overview
+## Overview
 
-QdrantFlow is a node-based flow editor for composing AI pipelines centered around the Qdrant vector database. No boilerplate — just drag, connect, and export.
+QdrantFlow is a node-based flow editor for composing AI pipelines centered around the Qdrant vector database. No boilerplate — drag nodes onto a canvas, connect their ports, and the Python code writes itself in real time in the panel on the right. Download a runnable `qdrant_pipeline.py` when you are ready.
 
 | Capability | Description |
 |---|---|
-| 🖱️ **Drag & drop** | Add nodes from the palette onto the canvas |
+| 🖱️ **Drag and drop** | Add nodes from the left palette onto the canvas |
 | 🔗 **Visual wiring** | Connect ports between nodes to express data flow |
 | ✏️ **Inline editing** | Edit fields directly on each node or in the Properties panel |
 | 🤖 **AI generation** | Describe a pipeline in plain English and let Claude build it |
 | 🐍 **Code export** | Export production-ready Python from any graph in one click |
-| 💾 **Save / load** | Persist named pipelines to `localStorage` or as JSON files |
+| 💾 **Save and load** | Persist named pipelines to `localStorage` or as JSON files |
 | 🔌 **Plugin API** | Register custom node types without touching core source files |
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-[![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Anthropic](https://img.shields.io/badge/Anthropic_API_Key-For%20AI%20generation-D97757?style=flat-square)](https://console.anthropic.com/)
+- [Node.js 18+](https://nodejs.org/)
+- An [Anthropic API key](https://console.anthropic.com/) for AI pipeline generation
 
 ### Run locally
 
@@ -80,23 +82,23 @@ npm run build   # outputs to dist/
 
 ### Set your API key
 
-Click **⚙ Settings** in the top-right and paste your Anthropic API key. It is stored only in your browser's `localStorage` and never sent anywhere except the Anthropic API.
+Click **⚙ Settings** in the top-right corner and paste your Anthropic API key. It is stored only in your browser's `localStorage` and never sent anywhere except the Anthropic API.
 
 ---
 
-## 📖 Usage
+## Usage
 
 ### Building a pipeline manually
 
 1. **Drag** a node from the left palette onto the canvas
-2. **Click a field value** directly on the node (or use the Properties panel) to edit it
-3. **Connect ports** — click and drag from an output port (right side) to an input port (left side) of another node
-4. **View generated Python** in the Code panel on the right
-5. **Download** as `qdrant_pipeline.py` with the ↓ button
+2. **Click a field value** directly on the node or use the Properties panel on the right to edit it
+3. **Connect ports** by clicking and dragging from an output port (right side of a node) to an input port (left side of another node)
+4. **View generated Python** updating live in the Code panel on the right
+5. **Download** as `qdrant_pipeline.py` using the download button
 
 ### AI generation
 
-Type a description in the prompt bar at the bottom and press **Enter**:
+Type a plain English description in the prompt bar at the bottom and press **Enter**:
 
 ```
 RAG pipeline with hybrid search using Qdrant and Claude
@@ -104,9 +106,9 @@ Agentic loop with Qdrant memory and tool use
 Document ingestion with OpenAI embeddings into Qdrant
 ```
 
-The canvas is populated automatically and fit to view.
+The canvas populates automatically and fits to view.
 
-### ⌨️ Keyboard shortcuts
+### Keyboard shortcuts
 
 | Key | Action |
 |---|---|
@@ -122,9 +124,10 @@ The canvas is populated automatically and fit to view.
 
 ---
 
-## 🗺️ Example Pipelines
+## Example Pipelines
 
 ### Basic RAG
+
 ```
 Query Input → OpenAI Embed → Qdrant Search → Claude → Output
                                    ↑
@@ -132,6 +135,7 @@ Query Input → OpenAI Embed → Qdrant Search → Claude → Output
 ```
 
 ### Hybrid Search RAG
+
 ```
 Query Input → OpenAI Embed ──▶ Qdrant Hybrid Search → Reranker → Claude → Output
            → FastEmbed ────▶          ↑
@@ -139,6 +143,7 @@ Query Input → OpenAI Embed ──▶ Qdrant Hybrid Search → Reranker → Cla
 ```
 
 ### Agentic Loop
+
 ```
 Query Input → Agent Loop → Tool Caller → (result back to Agent Loop)
                     ↓
@@ -149,7 +154,7 @@ Query Input → Agent Loop → Tool Caller → (result back to Agent Loop)
 
 ---
 
-## 📦 Node Reference
+## Node Reference
 
 ### Qdrant
 
@@ -157,7 +162,7 @@ Query Input → Agent Loop → Tool Caller → (result back to Agent Loop)
 |---|---|---|---|
 | **Collection** | — | `vectors` | host, collection name, vector size |
 | **Vector Search** | `query_vector`, `collection` | `results` | top_k, score_threshold |
-| **Hybrid Search** | `dense_vector`, `sparse_vector`, `collection` | `results` | top_k, fusion (RRF/DBSF), sparse model |
+| **Hybrid Search** | `dense_vector`, `sparse_vector`, `collection` | `results` | top_k, fusion (RRF / DBSF), sparse model |
 | **Upsert Points** | `vectors`, `payloads`, `collection` | `status` | batch_size |
 | **Filter** | `results` | `filtered` | field, match value, condition |
 
@@ -167,7 +172,7 @@ Query Input → Agent Loop → Tool Caller → (result back to Agent Loop)
 |---|---|---|---|
 | **OpenAI Embed** | `text` | `vector` | model, dims |
 | **Cohere Embed** | `text` | `vector` | model, input_type |
-| **FastEmbed** | `text` | `vector` | model (local, no API key) |
+| **FastEmbed** | `text` | `vector` | model (local, no API key required) |
 
 ### LLM
 
@@ -196,38 +201,35 @@ Query Input → Agent Loop → Tool Caller → (result back to Agent Loop)
 
 ---
 
-## 🔌 Plugin / Custom Nodes
+## Plugin API
 
-You can add entirely new node types — with their own palette entry, field definitions, and Python code generation — **without modifying any core file**.
+Add entirely new node types with their own palette entry, field definitions, and Python code generation without modifying any core file.
 
-### Quick-start (3 steps)
+### Three steps
 
-**1 — Create your plugin file** (e.g. `src/plugins/my-llm.js`):
+**1. Create your plugin file** (e.g. `src/plugins/my-llm.js`):
 
 ```js
 import { T } from "../constants/theme";
 import { registerNode } from "../constants/nodes";
 import { registerImport, registerCodeGenerator } from "../utils/codeGenerator";
 
-// Step 1 — declare the node shape
 registerNode("my_llm", {
   label:   "My LLM",
-  group:   "Custom",           // creates a new palette group if it doesn't exist
+  group:   "Custom",
   icon:    "ML",
   color:   T.purple,
   colorBg: "rgba(168,85,247,0.12)",
   fields: [
     { key: "endpoint", label: "Endpoint", default: "https://api.example.com/v1" },
-    { key: "model",    label: "Model",    default: "my-model-v1"                },
+    { key: "model",    label: "Model",    default: "my-model-v1" },
   ],
   ports_in:  ["context", "query"],
   ports_out: ["response"],
 });
 
-// Step 2 — register the Python import
 registerImport("my_llm", "import requests");
 
-// Step 3 — register the Python code generator
 registerCodeGenerator("my_llm", (lines, fields) => {
   lines.push(`# My LLM — ${fields.model}`);
   lines.push(`response = requests.post("${fields.endpoint}/chat", json={"model": "${fields.model}"})`);
@@ -235,11 +237,10 @@ registerCodeGenerator("my_llm", (lines, fields) => {
 });
 ```
 
-**2 — Import it in `src/main.jsx`** before the app renders:
+**2. Import it in `src/main.jsx`** before the app renders:
 
 ```js
-// src/main.jsx
-import "./plugins/my-llm";          // ← add this line
+import "./plugins/my-llm";   // add this line
 import React from "react";
 import ReactDOM from "react-dom/client";
 import QdrantFlow from "./QdrantFlow.jsx";
@@ -251,7 +252,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 ```
 
-**3 — Done!** Your node appears in the palette under the "Custom" group.
+**3. Done.** The node appears in the palette under the "Custom" group.
 
 ### Plugin API reference
 
@@ -262,15 +263,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 | `registerImport(type, line)` | `src/plugins` | Emit a Python import for this node type |
 | `registerCodeGenerator(type, fn)` | `src/plugins` | Generate Python code for this node type |
 
-All four exports are also available individually from `src/constants/nodes` and `src/utils/codeGenerator`.
-
-A fully worked example is at **[`src/plugins/example-custom-node.js`](src/plugins/example-custom-node.js)**.
+All four exports are also available individually from `src/constants/nodes` and `src/utils/codeGenerator`. A fully worked example is at [`src/plugins/example-custom-node.js`](src/plugins/example-custom-node.js).
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
-### Component Tree
+### Component tree
 
 ```
 QdrantFlow (root)
@@ -295,26 +294,26 @@ QdrantFlow (root)
 └── SaveLoadModal           — named save slots, JSON import/export
 ```
 
-### State Model
+### State model
 
 | State | Type | Description |
 |---|---|---|
-| `nodes` | `Node[]` | All nodes on canvas (id, type, x, y, fields) |
-| `edges` | `Edge[]` | Connections between node ports (from/to node + port) |
+| `nodes` | `Node[]` | All canvas nodes (id, type, x, y, fields) |
+| `edges` | `Edge[]` | Connections between node ports |
 | `selectedId` | `string` | Currently selected node id |
 | `pan` | `{x, y}` | Canvas translation in pixels |
-| `scale` | `number` | Canvas zoom factor (0.25 – 2.5) |
-| `history` | `Snapshot[]` | Undo stack (up to 30 states of nodes + edges) |
+| `scale` | `number` | Canvas zoom factor (0.25 to 2.5) |
+| `history` | `Snapshot[]` | Undo stack, up to 30 states |
 | `apiKey` | `string` | Anthropic API key (localStorage) |
 
-### Data Flow
+### Data flow
 
 ```
 User types prompt
       │
       ▼
 Claude API (claude-sonnet-4-6)
-      │  returns JSON {nodes[], edges[]}
+      │  returns JSON { nodes[], edges[] }
       ▼
 setNodes / setEdges
       │
@@ -328,50 +327,50 @@ EdgeLayer polls port DOM positions every 60 ms
 SVG bezier curves drawn in screen space over canvas
       │
       ▼
-generateCode(nodes) → Python string (memo)
+generateCode(nodes) → Python string (memoized)
       │
       ▼
 CodePanel renders syntax-highlighted output
 ```
 
-### Canvas Coordinate System
+### Canvas coordinate system
 
 ```
 Screen space:  raw pixel position in the browser viewport
-Canvas space:  screen position relative to the canvas element's top-left
+Canvas space:  position relative to the canvas element's top-left
 Node space:    logical position stored in node.x / node.y
 
-Conversion:
-  node_space → canvas_space:   canvas_pos = node.x * scale + pan.x
-  canvas_space → node_space:   node_pos   = (canvas_pos − pan) / scale
+Conversions:
+  node  → canvas:   canvas_pos = node.x * scale + pan.x
+  canvas → node:    node_pos   = (canvas_pos − pan) / scale
 
-Zoom is applied at the cursor position so the point under the
-mouse stays fixed — achieved by adjusting pan on each wheel event.
+Zoom applies at the cursor position so the point under the mouse
+stays fixed — achieved by adjusting pan on every wheel event.
 ```
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-| Layer | Technology | Version |
+| Layer | Package | Version |
 |---|---|---|
 | UI framework | [React](https://react.dev/) | 18.3.1 |
-| DOM renderer | [React DOM](https://react.dev/) | 18.3.1 |
+| DOM renderer | React DOM | 18.3.1 |
 | Bundler | [Vite](https://vitejs.dev/) | 5.4.21 |
 | Vite React plugin | [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react) | 4.7.0 |
-| Styling | Inline styles (zero CSS dependencies) | — |
-| AI generation | [Anthropic API](https://www.anthropic.com/) — `claude-sonnet-4-6` | — |
-| Persistence | Browser `localStorage` | — |
 | Language | JSX / ES2022 | — |
+| Styling | Inline styles (zero CSS dependencies) | — |
+| AI generation | [Anthropic API](https://www.anthropic.com/) (`claude-sonnet-4-6`) | — |
+| Persistence | Browser `localStorage` | — |
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Qdrant-FlowUI/
 ├── src/
-│   ├── components/              # Reusable UI components
+│   ├── components/
 │   │   ├── CodePanel.jsx
 │   │   ├── EdgeLayer.jsx
 │   │   ├── FlowNode.jsx
@@ -382,18 +381,18 @@ Qdrant-FlowUI/
 │   │   ├── QdrantLogo.jsx
 │   │   ├── SaveLoadModal.jsx
 │   │   └── SettingsModal.jsx
-│   ├── constants/               # Application constants
+│   ├── constants/
 │   │   ├── nodes.js             # NODE_DEFS + registerNode() plugin API
-│   │   └── theme.js             # Design tokens (colors, etc.)
-│   ├── plugins/                 # Plugin / extension entry-points
-│   │   ├── index.js             # Public plugin API (re-exports)
-│   │   └── example-custom-node.js  # Worked example — copy to create your own
-│   ├── utils/                   # Utility functions
-│   │   └── codeGenerator.js     # Python code gen + registerCodeGenerator() API
-│   ├── QdrantFlow.jsx           # Main application component
-│   └── main.jsx                 # React entry point (import plugins here)
-├── index.html                   # Vite HTML shell
-├── vite.config.js               # Vite configuration
+│   │   └── theme.js             # Design tokens
+│   ├── plugins/
+│   │   ├── index.js             # Public plugin API re-exports
+│   │   └── example-custom-node.js
+│   ├── utils/
+│   │   └── codeGenerator.js     # Python codegen + registerCodeGenerator() API
+│   ├── QdrantFlow.jsx           # Root application component
+│   └── main.jsx                 # React entry point — import plugins here
+├── index.html
+├── vite.config.js
 ├── package.json
 └── .gitignore
 ```
@@ -401,7 +400,5 @@ Qdrant-FlowUI/
 ---
 
 <div align="center">
-
-Built with ❤️ using [Qdrant](https://qdrant.tech/) · [Anthropic Claude](https://www.anthropic.com/) · [React](https://react.dev/) · [Vite](https://vitejs.dev/)
-
+  <sub>Powered by <a href="https://qdrant.tech">Qdrant</a> · Built with <a href="https://www.anthropic.com">Anthropic Claude</a> · <a href="https://react.dev">React</a> · <a href="https://vitejs.dev">Vite</a></sub>
 </div>
